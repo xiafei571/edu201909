@@ -14,5 +14,4 @@ public interface DeptMapper {
 	@Select("SELECT " + COLUMN_ALL + " FROM dept")
 	@ResultMap("deptResultMapper")
 	List<DeptInfo> getDeptList();
-
 }

@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -22,5 +23,12 @@ public class DeptController {
 	@ResponseBody
 	public List<DeptInfo> getDeptList() {
 		return deptService.getDeptList();
+	}
+	
+	@RequestMapping(value = "/index", method = RequestMethod.GET)
+	public String getDeptIndex(ModelMap modelMap) {
+		List<DeptInfo> list = deptService.getDeptList();
+		modelMap.put("list", list);
+		return "dept";
 	}
 }
