@@ -31,7 +31,7 @@ public class DemoController {
 		return "demo";
 	}
 	
-	//RESETFUL接口
+	//RESETFUL接口 返回json格式
 	@RequestMapping(value = "/ten2binary/json", method = RequestMethod.POST)
 	@ResponseBody
 	public Map<String, Integer> ten2binaryJson(Integer ten_number) {
